@@ -11,10 +11,18 @@ import java.util.List;
  * @author diegomachado
  */
 public class ItemDict {
+    private static ItemDict itemDict;
     private List<String> dict;
     
-    public ItemDict(String dir){
-        this.dict = DictReader.readFile(dir);
+    protected ItemDict(){
+        this.dict = DictReader.readFile("item.txt");
+    }
+    
+    public ItemDict getInstancia(){
+        if(itemDict == null){
+            itemDict = new ItemDict();
+        }
+        return itemDict;
     }
     
     public boolean verificar(String palavra){

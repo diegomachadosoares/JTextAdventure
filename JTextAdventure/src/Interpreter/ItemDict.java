@@ -14,14 +14,14 @@ public class ItemDict {
         this.dict = DictReader.readFile("item.txt");
     }
     
-    public ItemDict getInstancia(){
+    public static ItemDict getInstancia(){
         if(itemDict == null){
             itemDict = new ItemDict();
         }
         return itemDict;
     }
     
-//    public boolean verificar(String palavra){
-//        return dict.contains(palavra);
-//    }
+    public boolean verificar(String palavra){
+        return dict.contains(palavra);
+    }
 }

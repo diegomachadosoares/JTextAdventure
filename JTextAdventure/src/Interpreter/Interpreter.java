@@ -10,15 +10,14 @@ public class Interpreter {
     
     private String linha;
     private String comando;
-    private List<String> item;
+    private String item;
     private CommandDict cDict;
     ItemDict iDict;
     
     
     public Interpreter(){
-        this.cDict = new CommandDict();
-        this.iDict = new ItemDict();
-        
+        this.cDict = CommandDict.getInstancia();
+        this.iDict = ItemDict.getInstancia();
     }
     
     public void interpret(String line){
@@ -32,7 +31,6 @@ public class Interpreter {
                 
             }
         }
-        
     }
 
     private void setComando(String command) {

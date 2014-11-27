@@ -15,8 +15,9 @@ public class Mundo {
     List<Sala> salas;
 
     public Mundo() {
+        
     }
-    
+  
     public void addSala(Sala sala){
         salas.add(sala);
     }

@@ -9,17 +9,15 @@ public class Interpreter {
     private String linha;
     private String comando;
     private String item;
-    private final CommandDict cDict;
-    private final ItemDict iDict;
+    private final HashDict hDict;
 
     public Interpreter() {
-        this.cDict = CommandDict.getInstancia();
-        this.iDict = ItemDict.getInstancia();
+        this.hDict = HashDict.getInstance();
     }
 
     public void interpret(String line) {
         this.linha = line;
-        int cod = this.verifica(line);
+        //int cod = this.verifica(line);
     }
 
     private void setComando(String command) {
@@ -35,7 +33,7 @@ public class Interpreter {
         1 - Comando não encontrado
         -1 - Item não encontrado
         2 - OK
-    */
+    
     private int verifica(String line) {
         String tmp[] = linha.split("\\s+");
         if (tmp.length != 2) {
@@ -52,5 +50,5 @@ public class Interpreter {
             return -1;
         }
         return 2;
-    }
+    }*/
 }

@@ -8,21 +8,21 @@ import java.util.List;
  */
 public class CommandDict {
     
-    private static ItemDict commandDict;
-    private List<String> dict;
+    private static CommandDict commandDict;
+    private final List<String> dict;
     
-    public ItemDict getInstancia(){
+    public CommandDict getInstancia(){
         if(commandDict == null){
-            commandDict = new ItemDict();
+            commandDict = new CommandDict();
         }
         return commandDict;
     }
     
-    public CommandDict(){
+    private CommandDict(){
         this.dict = DictReader.readFile("command.txt");
     }
     
-    public boolean verificar(String palavra){
-        return dict.contains(palavra);
-    }
+//    public boolean verificar(String palavra){
+//        return dict.contains(palavra);
+//    }
 }

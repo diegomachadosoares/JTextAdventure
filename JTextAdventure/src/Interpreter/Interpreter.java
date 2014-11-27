@@ -1,5 +1,7 @@
 package Interpreter;
 
+import java.util.List;
+
 /**
  *
  * @author diegomachado
@@ -8,26 +10,36 @@ public class Interpreter {
     
     private String linha;
     private String comando;
-    private String item;
+    private List<String> item;
+    private CommandDict cDict;
+    ItemDict iDict;
+    
     
     public Interpreter(){
-        InterpreterCommand iCommand = new InterpreterCommand();
-        InterpreterItem iItem = new InterpreterItem();
+        this.cDict = new CommandDict();
+        this.iDict = new ItemDict();
         
     }
     
     public void interpret(String line){
         String tmp[] = line.split("\\s+");
         this.setComando(tmp[0]);
-        this.setItem(tmp[1]);
+        for (int i = 0; i < tmp.length; i++) {
+            item.add(tmp[i]);
+        }
+        if(cDict.verificar(comando)){
+            if(iDict.verificar(item.get(0))){
+                
+            }
+        }
         
     }
 
-    public void setComando(String command) {
+    private void setComando(String command) {
         this.comando = command;
     }
 
-    public void setItem(String item) {
+    private void setItem(String item) {
         this.item = item;
     }
     

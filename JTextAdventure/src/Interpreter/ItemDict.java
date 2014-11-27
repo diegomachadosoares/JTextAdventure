@@ -1,9 +1,5 @@
 package Interpreter;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,9 +8,9 @@ import java.util.List;
  */
 public class ItemDict {
     private static ItemDict itemDict;
-    private List<String> dict;
+    private final List<String> dict;
     
-    protected ItemDict(){
+    private ItemDict(){
         this.dict = DictReader.readFile("item.txt");
     }
     
@@ -25,7 +21,7 @@ public class ItemDict {
         return itemDict;
     }
     
-    public boolean verificar(String palavra){
-        return dict.contains(palavra);
-    }
+//    public boolean verificar(String palavra){
+//        return dict.contains(palavra);
+//    }
 }

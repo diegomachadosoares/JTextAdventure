@@ -30,6 +30,12 @@ public class Interpreter {
         this.item = item;
     }
 
+    /*  Codigo de erro
+        0 - Mais ou menos de duas string
+        1 - Comando não encontrado
+        -1 - Item não encontrado
+        2 - OK
+    */
     private int verifica(String line) {
         String tmp[] = linha.split("\\s+");
         if (tmp.length != 2) {

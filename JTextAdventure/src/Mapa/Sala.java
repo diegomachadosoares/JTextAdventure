@@ -5,6 +5,8 @@
  */
 package Mapa;
 
+import java.util.List;
+
 /**
  *
  * @author Leonardo
@@ -27,6 +29,7 @@ public class Sala extends Mapa {
     private final Mapa[] lados = new Mapa[4];
 
     private int numSala;
+    private List<String> itens;
 
     public Sala(int n) {
         this.numSala = n;
@@ -36,8 +39,16 @@ public class Sala extends Mapa {
         return lados[dir.getValor()];
     }
     
+    public int getNumSala(){
+        return this.numSala;
+    }
+    
     public void setLado(Direcao dir, Mapa em){
         lados[dir.getValor()] = em;
+    }
+    
+    public void addItem(String objeto){
+        itens.add(objeto);
     }
 
     @Override

@@ -6,10 +6,21 @@
 
 package Model;
 
+import Mapa.Mundo;
+import Mapa.Porta;
+import Mapa.Sala;
+
 /**
  *
  * @author AleGomes
  */
 public class Jogo {
+    Mundo mundo = new Mundo();
+    Sala sala1 = new Sala(1);
+    Sala sala2 = new Sala(2);
+    Sala sala3 = new Sala(3);
+    Sala sala4 = new Sala(4);
+    
+    Porta porta23 = new Porta(sala2,sala3);
     
 }

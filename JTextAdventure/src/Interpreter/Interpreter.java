@@ -10,7 +10,7 @@ public class Interpreter {
     private String comando;
     private String item;
     private final HashDict hDict;
-
+//        Acao.valueOf(acao).executar(objeto);
     public Interpreter() {
         this.hDict = HashDict.getInstance();
     }

@@ -19,7 +19,7 @@ public class TextArchive {
     private String salaControleText = "Você chegou a sala de controle, e precisa urgentemente cortar a comunicação do inimigo,\n"
             +"para isso a oeste existe uma mesa de controle onde tem um botão verde que desliga automaticamente a comunicação.\n"
             +"para o norte tem apenas uma parede, e para o leste tem uma passagem para a próxima sala.";
-    private String SalaArmasText = "Agora você está na sala de armas, seu próximo passo é pegar uma bomba e plantar na nave, para em seguida poder fugir.\n"
+    private String salaArmasText = "Agora você está na sala de armas, seu próximo passo é pegar uma bomba e plantar na nave, para em seguida poder fugir.\n"
             +"Depois de plantar a bomba você terá uma parede a norte e a leste. O caminho mais rapido para sua fuga está a sul.";
-    private String room4Text = "Você está na parte final, agora no pátio de naves e terá que roubar uma para fugir, depois que fizer isso estará livre.";
+    private String salaFimText = "Você está na parte final, agora no pátio de naves e terá que roubar uma para fugir, depois que fizer isso estará livre.";
 }

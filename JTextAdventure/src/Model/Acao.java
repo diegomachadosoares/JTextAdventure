@@ -1,10 +1,5 @@
 package Model;
 
-//        Exemplo de Acao
-//        String acao = "Abrir";
-//        acao = acao.toUpperCase();
-//        String objeto = "Porta";
-//        Acao.valueOf(acao).executar(objeto);
 
 public enum Acao
 {
@@ -22,11 +17,29 @@ public enum Acao
         }  
     },
     
-    ABRIR{
+    ENTRAR{
         @Override
         void executar(String objeto) {
             System.out.println(this.name() + " " + objeto);
         }
-};
+    },
+    USAR{
+        @Override
+        void executar(String objeto) {
+            System.out.println(this.name() + " " + objeto);
+        }
+    },
+    APERTAR{
+        @Override
+        void executar(String objeto) {
+            System.out.println(this.name() + " " + objeto);
+        }
+    },
+    PLANTAR{
+        @Override
+        void executar(String objeto) {
+            System.out.println(this.name() + " " + objeto);
+        }
+    };
     abstract void executar(String objeto);
 }

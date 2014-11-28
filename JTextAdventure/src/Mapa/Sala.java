@@ -47,6 +47,13 @@ public class Sala extends Mapa {
         lados[dir.getValor()] = em;
     }
     
+    public void setLados(Mapa norte, Mapa sul, Mapa leste, Mapa oeste){
+            lados[Direcao.norte.getValor()] = norte;
+            lados[Direcao.sul.getValor()] = sul;
+            lados[Direcao.leste.getValor()] = leste;
+            lados[Direcao.oeste.getValor()] = oeste;
+    }
+    
     public void addItem(String objeto){
         itens.add(objeto);
     }

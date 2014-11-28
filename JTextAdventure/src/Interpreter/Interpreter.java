@@ -30,7 +30,7 @@ public class Interpreter {
 
         if (hDict.verificaComando(comando)) {
             if (hDict.verificaComandoItem(comando, item)) {
-
+                
             } else {
                 return -1;
             }

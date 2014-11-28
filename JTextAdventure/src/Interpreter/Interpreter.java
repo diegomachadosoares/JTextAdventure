@@ -11,21 +11,33 @@ public class Interpreter {
     private String item;
     private final HashDict hDict;
 //        Acao.valueOf(acao).executar(objeto);
+
     public Interpreter() {
         this.hDict = HashDict.getInstance();
     }
 
-    public void interpret(String line) {
+    /*
+     Codigo de erro
+     0 - OK
+     1 - Comando não encontrado
+     -1 - Item não encontrado
+     */
+    public int interpret(String line) {
         this.linha = line;
         String tmp[] = linha.split("\\s+");
-        this.comando = tmp[0];
-        this.item = tmp[1];
-        
-        if(hDict.verificaComando(comando)){
-            if(hDict.verificaComandoItem(comando, item)){
-                
+        setComando(tmp[0]);
+        setItem(tmp[1]);
+
+        if (hDict.verificaComando(comando)) {
+            if (hDict.verificaComandoItem(comando, item)) {
+
+            } else {
+                return -1;
             }
+        } else {
+            return 1;
         }
+        return 0;
     }
 
     private void setComando(String command) {
@@ -35,28 +47,4 @@ public class Interpreter {
     private void setItem(String item) {
         this.item = item;
     }
-
-    /*  Codigo de erro
-        0 - Mais ou menos de duas string
-        1 - Comando não encontrado
-        -1 - Item não encontrado
-        2 - OK
-    
-    private int verifica(String line) {
-        String tmp[] = linha.split("\\s+");
-        if (tmp.length != 2) {
-            return 0;
-        }
-        this.setComando(tmp[0]);
-        this.setItem(tmp[1]);
-        //Comando não encontrado!
-        if (!cDict.verificar(comando)) {
-            return 1;
-        }
-        //Item não encontrado!
-        if (!iDict.verificar(item)) {
-            return -1;
-        }
-        return 2;
-    }*/
 }

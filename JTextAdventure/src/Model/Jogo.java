@@ -13,16 +13,11 @@ public class Jogo {
 
     Mundo mundo;
 
-//    Porta porta12;
-//    Porta porta23;
-//    Porta porta34;
-    
     Personagem person;
     
     public Jogo() {
         criarMundo();
         criarSalas();
-//        criarPortas();
         criarParedes();
         criarPersonagem();
     }
@@ -40,7 +35,7 @@ public class Jogo {
         System.out.println(introText);
 
         while (person.getSalaAtual().getNumSala() != salaArmas.getNumSala()) {
-            //Loop principal do jogo
+            
         }
     }
 
@@ -64,32 +59,31 @@ public class Jogo {
         this.fim.addItem("nave");
     }
 
-//    private void criarPortas() {
-//        this.porta12 = new Porta(cela, salaControle);
-//        this.porta23 = new Porta(cela, salaControle);
-//        this.porta34 = new Porta(cela, salaControle);
-//    }
-
     private void criarParedes() {
-        cela.setLado(Sala.Direcao.sul, new Parede());
-        cela.setLado(Sala.Direcao.norte, salaControle);
-        cela.setLado(Sala.Direcao.leste, new Parede());
-        cela.setLado(Sala.Direcao.oeste, new Parede());
+        this.cela.setLados(this.salaControle, new Parede(), new Parede(), new Parede());
+        this.salaControle.setLados(new Parede(), this.cela, this.salaArmas, new Parede());
+        this.salaArmas.setLados(new Parede(), this.fim, new Parede(), cela);
+        this.fim.setLados(salaArmas, new Parede(), new Parede(), cela);
         
-        salaControle.setLado(Sala.Direcao.sul, cela);
-        salaControle.setLado(Sala.Direcao.norte, new Parede());
-        salaControle.setLado(Sala.Direcao.leste, new Parede());
-        salaControle.setLado(Sala.Direcao.oeste, new Parede());
-        
-        salaArmas.setLado(Sala.Direcao.sul, fim);
-        salaArmas.setLado(Sala.Direcao.norte, new Parede());
-        salaArmas.setLado(Sala.Direcao.leste, new Parede());
-        salaArmas.setLado(Sala.Direcao.oeste, salaControle);
-        
-        fim.setLado(Sala.Direcao.sul, new Parede());
-        fim.setLado(Sala.Direcao.norte, salaArmas);
-        fim.setLado(Sala.Direcao.leste, new Parede());
-        fim.setLado(Sala.Direcao.oeste, new Parede());
+//        cela.setLado(Sala.Direcao.sul, new Parede());
+//        cela.setLado(Sala.Direcao.norte, salaControle);
+//        cela.setLado(Sala.Direcao.leste, new Parede());
+//        cela.setLado(Sala.Direcao.oeste, new Parede());
+
+//        salaControle.setLado(Sala.Direcao.sul, cela);
+//        salaControle.setLado(Sala.Direcao.norte, new Parede());
+//        salaControle.setLado(Sala.Direcao.leste, salaArmas);
+//        salaControle.setLado(Sala.Direcao.oeste, new Parede());
+
+//        salaArmas.setLado(Sala.Direcao.sul, fim);
+//        salaArmas.setLado(Sala.Direcao.norte, new Parede());
+//        salaArmas.setLado(Sala.Direcao.leste, new Parede());
+//        salaArmas.setLado(Sala.Direcao.oeste, salaControle);
+
+//        fim.setLado(Sala.Direcao.sul, new Parede());
+//        fim.setLado(Sala.Direcao.norte, salaArmas);
+//        fim.setLado(Sala.Direcao.leste, new Parede());
+//        fim.setLado(Sala.Direcao.oeste, new Parede());
     }
 
     private void criarPersonagem() {

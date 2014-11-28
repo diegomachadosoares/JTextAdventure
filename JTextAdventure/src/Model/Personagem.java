@@ -38,4 +38,8 @@ public class Personagem {
     public boolean estaNoInventario(String item){
         return inventario.contains(item);
     }
+    
+    public Sala getSalaAtual(){
+        return this.salaAtual;
+    }
 }

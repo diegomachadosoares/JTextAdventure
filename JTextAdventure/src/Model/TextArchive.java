@@ -43,9 +43,9 @@ public class TextArchive {
             + "mini decodificador dentro da sola de seu sapato.";
     private String salaControleText = "Você chegou a sala de controle, e precisa "
             + "urgentemente cortar a comunicação do inimigo,\n"
-            +"para isso a oeste existe uma mesa de controle onde tem um botão "
-            + "verde que desliga automaticamente a comunicação.\n"
-            +"para o norte tem apenas uma parede, e para o leste tem uma passagem "
+            +"para isso existe uma mesa de controle onde tem um botão "
+            + "verde que desliga automaticamente a comunicação, que deverá ser apertado.\n"
+            +"Para o norte e oeste tem apenas uma parede, e para o leste tem uma passagem "
             + "para a próxima sala.";
     private String salaArmasText = "Agora você está na sala de armas, seu próximo "
             + "passo é pegar uma bomba e plantar na nave, para em seguida poder fugir.\n"
@@ -56,11 +56,11 @@ public class TextArchive {
     
     public void associarMensagemSala(){
         Mundo mundo = new Mundo();
-        mensagemSala.put(mundo.getSala(1), introText);
-        mensagemSala.put(mundo.getSala(2), celaText);
-        mensagemSala.put(mundo.getSala(3), salaControleText);
-        mensagemSala.put(mundo.getSala(4), salaArmasText);
-        mensagemSala.put(mundo.getSala(5), salaFimText);
+        //mensagemSala.put(mundo.getSala(1), introText);
+        mensagemSala.put(mundo.getSala(1), celaText);
+        mensagemSala.put(mundo.getSala(2), salaControleText);
+        mensagemSala.put(mundo.getSala(3), salaArmasText);
+        mensagemSala.put(mundo.getSala(4), salaFimText);
     }
     public static String getMensagem(Sala sala){
         return mensagemSala.get(sala);

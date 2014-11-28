@@ -17,7 +17,15 @@ public class Interpreter {
 
     public void interpret(String line) {
         this.linha = line;
-        //int cod = this.verifica(line);
+        String tmp[] = linha.split("\\s+");
+        this.comando = tmp[0];
+        this.item = tmp[1];
+        
+        if(hDict.verificaComando(comando)){
+            if(hDict.verificaComandoItem(comando, item)){
+                
+            }
+        }
     }
 
     private void setComando(String command) {

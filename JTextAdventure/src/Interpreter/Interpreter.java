@@ -1,5 +1,7 @@
 package Interpreter;
 
+import Model.Acao;
+
 /**
  *
  * @author diegomachado
@@ -25,9 +27,10 @@ public class Interpreter {
     public int interpret(String line) {
         this.linha = line;
         String tmp[] = linha.split("\\s+");
-        setComando(tmp[0]);
-        setItem(tmp[1]);
-
+        String cmd = tmp[0].toUpperCase();
+        String itm = tmp[1].toUpperCase();
+        setComando(cmd);
+        setItem(itm);
         if (hDict.verificaComando(comando)) {
             if (hDict.verificaComandoItem(comando, item)) {
                 

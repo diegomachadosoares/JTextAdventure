@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class Personagem {
     private List<String> inventario;
+    private List<String> usados;
     private Sala salaAtual;
     private Mundo mundo;
     
@@ -25,8 +26,8 @@ public class Personagem {
         salaAtual = mundo.getSala(1);
     }
     
-    public void irPara(Sala sala){
-        this.salaAtual = sala;
+    public void irPara(int numSala){
+        this.salaAtual = mundo.getSala(numSala);
     }
     
     public void mostrarInventario(){
@@ -38,7 +39,15 @@ public class Personagem {
     public boolean estaNoInventario(String item){
         return inventario.contains(item);
     }
-    
+    public boolean estaNoUsados(String item){
+        return usados.contains(item);
+    }
+    public void addInventario(String item){
+        inventario.add(item);
+    }
+    public void addUsados(String item){
+        usados.add(item);
+    }
     public Sala getSalaAtual(){
         return this.salaAtual;
     }

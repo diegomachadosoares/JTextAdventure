@@ -89,6 +89,10 @@ public class Tela extends javax.swing.JFrame {
        return this.AreaTexto.getText();
     }
     
+    public void setAreaTexto(String frase){
+        
+        AreaTexto.setText(AreaTexto.getText()+"\n"+frase);
+    }
     /**
      * @param args the command line arguments
      */

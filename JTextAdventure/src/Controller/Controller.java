@@ -20,7 +20,13 @@ public class Controller {
         String aux[] = entrada.split("\\s+");
         String cmd = aux[0].toUpperCase();
         String itm = aux[1].toUpperCase();
-        Acao.valueOf(cmd).executar(itm, sala);
+        String resposta = Acao.valueOf(cmd).executar(itm, sala);
+        if(resposta.contentEquals("FIM")){
+            tela.setAreaTexto("Você usou a nave com SUCESSO!\n Parabéns o jogo terminou!!");
+            person.irPara(5);
+        }else{
+            tela.setAreaTexto(resposta);
+        }
     }
     public String mostrarNaTela(){
         return this.areaTexto +" "+ this.entrada;

@@ -6,7 +6,6 @@ public enum Acao {
                 Personagem person;
                 String resposta;
                 String parede = "Não há nada nesse lado, apenas parede!";
-
                 @Override
                 public String executar(String objeto, int numSala) {
                     if (numSala == 1) {
@@ -86,7 +85,6 @@ public enum Acao {
     PEGAR {
                 Personagem person;
                 String resposta;
-
                 @Override
                 public String executar(String objeto, int numSala) {
                     if (numSala == 1) {
@@ -104,7 +102,7 @@ public enum Acao {
                                 resposta = "Você pegou a bomba";
                                 return resposta;
                         }
-                    } else if (numSala == 2 || numSala == 4) {
+                    } else {
                         resposta = "A ação pergar não é permitida nessa sala";
                         return resposta;
                     }
@@ -115,7 +113,6 @@ public enum Acao {
     USAR {
                 Personagem person;
                 String resposta;
-
                 @Override
                 public String executar(String objeto, int numSala) {
                     if (numSala == 1) {
@@ -127,17 +124,14 @@ public enum Acao {
                                     return resposta;
                                 }
                         }
-                        }else if(numSala == 4){
-                                switch(objeto){
-                                    case "NAVE":
-                                        
-                                            person.addUsados(objeto);
-                                            resposta = "FIM";
-                                            return resposta;
-                                        
-                                }
-                                
-                        } else if (numSala == 2 || numSala == 3) {
+                    } else if (numSala == 4) {
+                        switch (objeto) {
+                            case "NAVE":
+                                resposta = "FIM";
+                                return resposta;
+                        }
+
+                    } else{
                         resposta = "A ação não é permitida nessa sala.";
                         return resposta;
                     }
@@ -145,16 +139,40 @@ public enum Acao {
                 }
             },
     APERTAR {
+                Personagem person;
+                String resposta;
                 @Override
                 public String executar(String objeto, int numSala) {
-                    System.out.println(this.name() + " " + objeto);
+                    if (numSala == 2) {
+                        switch (objeto) {
+                            case "BOTÃO":
+                                person.addUsados(objeto);
+                                resposta = "Você apertou o botão com SUCESSO!";
+                                return resposta;
+                        }
+                    }else{
+                        resposta = "A ação não é permitida nessa sala";
+                        return resposta;
+                    } 
                     return null;
                 }
             },
     PLANTAR {
+                Personagem person;
+                String resposta;
                 @Override
                 public String executar(String objeto, int numSala) {
-                    System.out.println(this.name() + " " + objeto);
+                    if (numSala == 3) {
+                        switch (objeto) {
+                            case "BOMBA":
+                                person.addUsados(objeto);
+                                resposta = "Você plantou a bomba com SUCESSO!";
+                                return resposta;
+                        }
+                    }else{
+                        resposta = "A ação não é permitida nessa sala";
+                        return resposta;
+                    } 
                     return null;
                 }
             };

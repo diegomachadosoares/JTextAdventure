@@ -1,6 +1,7 @@
 package Model;
 
 import Mapa.Mundo;
+import Mapa.Parede;
 import Mapa.Sala;
 
 public class Jogo {
@@ -70,7 +71,25 @@ public class Jogo {
 //    }
 
     private void criarParedes() {
+        cela.setLado(Sala.Direcao.sul, new Parede());
+        cela.setLado(Sala.Direcao.norte, salaControle);
+        cela.setLado(Sala.Direcao.leste, new Parede());
+        cela.setLado(Sala.Direcao.oeste, new Parede());
         
+        salaControle.setLado(Sala.Direcao.sul, cela);
+        salaControle.setLado(Sala.Direcao.norte, new Parede());
+        salaControle.setLado(Sala.Direcao.leste, new Parede());
+        salaControle.setLado(Sala.Direcao.oeste, new Parede());
+        
+        salaArmas.setLado(Sala.Direcao.sul, fim);
+        salaArmas.setLado(Sala.Direcao.norte, new Parede());
+        salaArmas.setLado(Sala.Direcao.leste, new Parede());
+        salaArmas.setLado(Sala.Direcao.oeste, salaControle);
+        
+        fim.setLado(Sala.Direcao.sul, new Parede());
+        fim.setLado(Sala.Direcao.norte, salaArmas);
+        fim.setLado(Sala.Direcao.leste, new Parede());
+        fim.setLado(Sala.Direcao.oeste, new Parede());
     }
 
     private void criarPersonagem() {

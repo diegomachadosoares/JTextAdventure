@@ -3,6 +3,7 @@ package Controller;
 import Interpreter.*;
 import View.Tela;
 import Model.*;
+import Erro.*;
 
 public class Controller {
     Tela tela = new Tela();
@@ -14,6 +15,14 @@ public class Controller {
         int res = interpret.interpret(entrada);
         if(res == 0){
             executaAcao(entrada,person.getSalaAtual().getNumSala());
+        } else if(res == 1){
+            ErroCommand ec = new ErroCommand();
+            String e = ec.getError();
+            tela.setAreaTexto(e);
+        } else if(res == -1){
+            ErroItemCommand eic = new ErroItemCommand();
+            String e = eic.getError();
+            tela.setAreaTexto(e);
         }
     }
     public void executaAcao(String entrada, int sala){

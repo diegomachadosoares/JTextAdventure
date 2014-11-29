@@ -33,14 +33,13 @@ public class Interpreter {
         setItem(itm);
         if (hDict.verificaComando(comando)) {
             if (hDict.verificaComandoItem(comando, item)) {
-                
+                return 0;
             } else {
                 return -1;
             }
         } else {
             return 1;
         }
-        return 0;
     }
 
     private void setComando(String command) {

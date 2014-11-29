@@ -19,7 +19,7 @@ public class CommandError implements Error {
      * @return
      */
     @Override
-    public String getError(){
+    public String treatException(){
         return erro;
     }
 

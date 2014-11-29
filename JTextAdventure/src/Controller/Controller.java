@@ -18,11 +18,11 @@ public class Controller {
             executaAcao(entrada,person.getSalaAtual().getNumSala());
         } else if(res == 1){
             CommandError ec = new CommandError();
-            String e = ec.getError();
+            String e = ec.treatException();
             tela.setAreaTexto(e);
         } else if(res == -1){
             ItemCommandError eic = new ItemCommandError();
-            String e = eic.getError();
+            String e = eic.treatException();
             tela.setAreaTexto(e);
         }
     }

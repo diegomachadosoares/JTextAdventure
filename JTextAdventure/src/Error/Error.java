@@ -5,5 +5,5 @@ package Error;
  * @author diegomachado
  */
 public interface Error {
-    public String getError();
+    public String treatException();
 }

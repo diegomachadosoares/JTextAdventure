@@ -15,7 +15,7 @@ public class ItemCommandError implements Error {
     }
     
     @Override
-    public String getError(){
+    public String treatException(){
         return erro;
     }
 }

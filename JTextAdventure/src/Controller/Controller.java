@@ -1,9 +1,10 @@
 package Controller;
 
+import Error.CommandError;
+import Error.ItemCommandError;
 import Interpreter.*;
 import View.Tela;
 import Model.*;
-import Erro.*;
 
 public class Controller {
     Tela tela = new Tela();
@@ -16,11 +17,11 @@ public class Controller {
         if(res == 0){
             executaAcao(entrada,person.getSalaAtual().getNumSala());
         } else if(res == 1){
-            ErroCommand ec = new ErroCommand();
+            CommandError ec = new CommandError();
             String e = ec.getError();
             tela.setAreaTexto(e);
         } else if(res == -1){
-            ErroItemCommand eic = new ErroItemCommand();
+            ItemCommandError eic = new ItemCommandError();
             String e = eic.getError();
             tela.setAreaTexto(e);
         }

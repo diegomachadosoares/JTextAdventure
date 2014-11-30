@@ -54,8 +54,8 @@ public class TextArchive {
     private String salaFimText = "Você está na parte final, agora no pátio de "
             + "naves e terá que roubar uma para fugir, depois que fizer isso estará livre.";
     
-    public void associarMensagemSala(){
-        Mundo mundo = new Mundo();
+    public final void associarMensagemSala(){
+        Mundo mundo = Mundo.getInstance();
         //mensagemSala.put(mundo.getSala(1), introText);
         mensagemSala.put(mundo.getSala(1), celaText);
         mensagemSala.put(mundo.getSala(2), salaControleText);

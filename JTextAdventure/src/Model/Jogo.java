@@ -41,7 +41,7 @@ public class Jogo {
     }
 
     private void criarMundo() {
-        this.mundo = new Mundo();
+        this.mundo = Mundo.getInstance();
         this.mundo.addSala(cela);
         this.mundo.addSala(salaControle);
         this.mundo.addSala(salaArmas);

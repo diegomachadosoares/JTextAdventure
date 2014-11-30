@@ -5,6 +5,7 @@
  */
 package Mapa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Sala extends Mapa {
 
     public enum Direcao {
 
-        norte(1), sul(2), leste(3), oeste(4);
+        norte(0), sul(1), leste(2), oeste(3);
         private final int valor;
 
         Direcao(int val) {
@@ -33,6 +34,7 @@ public class Sala extends Mapa {
 
     public Sala(int n) {
         this.numSala = n;
+        itens = new ArrayList();
     }
 
     public Mapa getLado(Direcao dir) {

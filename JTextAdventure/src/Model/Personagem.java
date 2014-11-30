@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Model;
 
 import Mapa.Mundo;
@@ -23,6 +17,7 @@ public class Personagem {
     
     public Personagem(){
         inventario = new ArrayList<>();
+        mundo = Mundo.getInstance();
         salaAtual = mundo.getSala(1);
     }
     

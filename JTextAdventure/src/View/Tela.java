@@ -11,12 +11,14 @@ package View;
  * @author AleGomes
  */
 import Controller.Controller;
+import Model.Jogo;
 public class Tela extends javax.swing.JFrame {
 
     /**
      * Creates new form Tela
      */
     public Tela() {
+        Jogo jogo = new Jogo();
         initComponents();
         
     }

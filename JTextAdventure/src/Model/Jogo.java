@@ -17,8 +17,8 @@ public class Jogo {
     Personagem person;
     
     public Jogo() {
-        criarMundo();
         criarSalas();
+        criarMundo();
         criarParedes();
         criarPersonagem();
     }

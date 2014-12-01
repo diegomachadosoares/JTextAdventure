@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package View;
 
 /**
@@ -11,16 +5,15 @@ package View;
  * @author AleGomes
  */
 import Controller.Controller;
-import Model.Jogo;
+
 public class Tela extends javax.swing.JFrame {
 
     /**
      * Creates new form Tela
      */
     public Tela() {
-        Jogo jogo = new Jogo();
+        //control = Controller.getInstance();
         initComponents();
-        
     }
 
     /**
@@ -49,7 +42,7 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
-        tituloJogo.setText("                                                                         Star Adventure");
+        tituloJogo.setText("                                                                         Star Aces Adventure");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,7 +51,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tituloJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+                    .addComponent(tituloJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
                     .addComponent(entradaTexto)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
@@ -67,9 +60,9 @@ public class Tela extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tituloJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tituloJogo, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(entradaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -80,7 +73,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void entradaTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTextoActionPerformed
         // TODO add your handling code here:
-        AreaTexto.setText(control.mostrarNaTela());
+        //AreaTexto.setText(control.mostrarNaTela());
     }//GEN-LAST:event_entradaTextoActionPerformed
 
     public String getEntradaTexto(){
@@ -92,8 +85,8 @@ public class Tela extends javax.swing.JFrame {
     }
     
     public void setAreaTexto(String frase){
-        
-        AreaTexto.setText(AreaTexto.getText()+"\n"+frase);
+       // AreaTexto.setText(control.mostrarIntro());
+        //AreaTexto.setText(AreaTexto.getText()+"\n"+frase);
     }
     /**
      * @param args the command line arguments

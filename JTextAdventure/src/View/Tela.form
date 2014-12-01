@@ -26,7 +26,7 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="tituloJogo" pref="499" max="32767" attributes="0"/>
+                  <Component id="tituloJogo" pref="676" max="32767" attributes="0"/>
                   <Component id="entradaTexto" alignment="1" max="32767" attributes="0"/>
                   <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -38,9 +38,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="tituloJogo" pref="26" max="32767" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="203" max="-2" attributes="0"/>
+              <Component id="tituloJogo" pref="120" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="283" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="entradaTexto" min="-2" pref="49" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -71,7 +71,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="tituloJogo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="                                                                         Star Adventure"/>
+        <Property name="text" type="java.lang.String" value="                                                                         Star Aces Adventure"/>
       </Properties>
     </Component>
   </SubComponents>

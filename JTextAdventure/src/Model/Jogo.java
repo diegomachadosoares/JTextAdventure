@@ -23,23 +23,6 @@ public class Jogo {
         criarPersonagem();
     }
 
-    public void criarJogo() {
-        
-        String introText = "Ano 2073, a guerra entre Ases e Coringas está em seu"
-                + " pior momento.\n"
-                + "Você é um capitão do exército de Ases, e foi capturado ao tentar "
-                + "plantar um dispositivo secreto em uma base Coringa.\n"
-                + "Agora sua missão é tentar escapar da base e destrui-la";
-
-        String endText = "Parabens! Você escapou.";
-
-        System.out.println(introText);
-
-        while (person.getSalaAtual().getNumSala() != fim.getNumSala()) {
-            
-        }
-    }
-
     private void criarMundo() {
         this.mundo = Mundo.getInstance();
         this.mundo.addSala(cela);
@@ -58,6 +41,7 @@ public class Jogo {
 
         this.cela.addItem("decodificador");
         this.salaControle.addItem("botao");
+        this.salaControle.addItem("chave");
         this.salaArmas.addItem("bomba");
         this.patio.addItem("nave");
     }
@@ -91,6 +75,6 @@ public class Jogo {
     }
 
     private void criarPersonagem() {
-        this.person = new Personagem();
+        this.person = Personagem.getPersonagem();
     }
 }

@@ -14,15 +14,25 @@ public class Personagem {
     private List<String> usados;
     private Sala salaAtual;
     private Mundo mundo;
+    private static Personagem p;
+    private int preso = 0;
     
-    public Personagem(){
+    private Personagem(){
         inventario = new ArrayList<>();
+        usados = new ArrayList<>();
         mundo = Mundo.getInstance();
-        salaAtual = mundo.getSala(1);
+        salaAtual = mundo.getSala(0);
+    }
+    
+    public static Personagem getPersonagem(){
+        if(p == null){
+            p = new Personagem();
+        }
+        return p;
     }
     
     public void irPara(int numSala){
-        this.salaAtual = mundo.getSala(numSala);
+        this.salaAtual = mundo.getSala(numSala -1);
     }
     
     public void mostrarInventario(){
@@ -45,5 +55,18 @@ public class Personagem {
     }
     public Sala getSalaAtual(){
         return this.salaAtual;
+    }
+    
+    public void setPreso(){
+        this.preso = 1;
+    }
+    
+    public int getPreso(){
+        return this.preso;
+    }
+    
+    public void resetAttr(){
+        inventario.clear();
+        usados.clear();
     }
 }

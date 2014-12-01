@@ -16,7 +16,7 @@ public class HashDict {
     
     private HashDict(){
         dict = new HashMap();
-        rawDict = DictReader.readFile("./src/Interpreter/entrada.txt");
+        rawDict = DictReader.readFile("./src/Interpreter/dict.txt");
         preencheHash(rawDict);
     }
     
